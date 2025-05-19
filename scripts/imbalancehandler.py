@@ -118,7 +118,8 @@ class ImbalanceHandler:
             non_fraud = len(X[(y==0)])
             need = non_fraud - fraud
 
-            fraud_values = X[(y==1)]
+            fraud_mask = (y==1).to_numpy()
+            fraud_values = X[fraud_mask, :]
             tensor_x = torch.tensor(fraud_values, dtype=torch.float32)
             tensor_y = torch.tensor(y[(y==1)].to_numpy(), dtype=torch.float32)
 

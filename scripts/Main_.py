@@ -240,8 +240,7 @@ DISTANCE_METRICS = {
 
 METHODS = ['kmeans', 'dbscan']
     
-    #Unsupervised learning
-data = DataGathering(file_path="trainfinal.csv", pipeline_numerical = pipeline_numerical, pipeline_categorical = pipeline_categorical)
+data = DataGathering(file_path="creditcard.csv", pipeline_numerical = pipeline_numerical, pipeline_categorical = pipeline_categorical)
 trainer_uns = UnsupervisedTraining(n_clusters = 3, 
                                     eps = 3, min_samples = 3)
     
